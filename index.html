@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TronlinkTextTool</title>
+  <style>
+    /* ---------- Base Styling ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #111);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- Glassmorphism ---------- */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    /* ---------- Navbar ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #7f5af0;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #7f5af0, #2cb67d);
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---------- Hero Section ---------- */
+    #hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 90vh;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+
+    /* ---------- Tools Section ---------- */
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .result-box {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.4);
+      min-height: 80px;
+      font-size: 1rem;
+    }
+
+    /* ---------- FAQ Section ---------- */
+    .faq-item {
+      margin-bottom: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      background: rgba(255,255,255,0.1);
+      padding: 14px;
+      cursor: pointer;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background: rgba(0,0,0,0.4);
+      padding: 0 14px;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 14px;
+    }
+
+    /* ---------- Contact Section ---------- */
+    #contact p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media(max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      #hero h1 {
+        font-size: 2rem;
+      }
+      .btn {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">TronlinkTextTool</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#why">Why Install</a></li>
+      <li><a href="#faq">FAQs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="btn">Install Extension</button>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="glass">
+      <h1>🚀 TronlinkTextTool</h1>
+      <p>
+        The ultimate text transformation tool for <b>bloggers, creators, and developers</b>.  
+        Instantly format your content, extract emails, and generate SEO-friendly slugs—all inside your browser.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools">
+    <h2>🛠 Try Our Tools</h2>
+    <div class="glass">
+      <textarea id="inputText" placeholder="Type or paste your text here..."></textarea>
+      <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;">
+        <button class="btn" onclick="toUpper()">UPPERCASE</button>
+        <button class="btn" onclick="toLower()">lowercase</button>
+        <button class="btn" onclick="toTitle()">Title Case</button>
+        <button class="btn" onclick="extractEmails()">Extract Emails</button>
+        <button class="btn" onclick="generateSlug()">Generate Slug</button>
+      </div>
+      <div class="result-box" id="resultBox">Result will appear here...</div>
+    </div>
+  </section>
+
+  <!-- Why Install -->
+  <section id="why">
+    <h2>✨ Why Install TronlinkTextTool?</h2>
+    <div class="glass">
+      <p>
+        Blogging and content creation demand <b>speed and precision</b>.  
+        This extension saves you time by automating repetitive text tasks:  
+        converting cases, cleaning up text, and preparing SEO-friendly content instantly.  
+        No more switching apps—do it all inside your browser!
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faq">
+    <h2>❓ FAQs</h2>
+    <div class="glass">
+      <div class="faq-item">
+        <div class="faq-question">Is TronlinkTextTool free?</div>
+        <div class="faq-answer">Yes! It's completely free to use for all users.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can it help with SEO?</div>
+        <div class="faq-answer">Absolutely! The slug generator ensures your URLs are clean and SEO-friendly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need coding skills?</div>
+        <div class="faq-answer">Not at all. Just install the extension and start transforming your text instantly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📩 Contact Us</h2>
+    <div class="glass">
+      <p>Have questions or feedback? Email us at <b>developkhiffs@gmail.com</b></p>
+    </div>
+  </section>
+
+  <script>
+    // ---------- Tools Logic ----------
+    function getInput() {
+      return document.getElementById("inputText").value;
+    }
+    function setResult(text) {
+      document.getElementById("resultBox").innerText = text || "No result...";
+    }
+
+    function toUpper() {
+      setResult(getInput().toUpperCase());
+    }
+    function toLower() {
+      setResult(getInput().toLowerCase());
+    }
+    function toTitle() {
+      setResult(getInput().replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.substr(1).toLowerCase()));
+    }
+    function extractEmails() {
+      const emails = getInput().match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}/g);
+      setResult(emails ? emails.join(", ") : "No emails found.");
+    }
+    function generateSlug() {
+      setResult(getInput().toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-"));
+    }
+
+    // ---------- FAQ Toggle ----------
+    document.querySelectorAll(".faq-question").forEach(q => {
+      q.addEventListener("click", () => {
+        q.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
