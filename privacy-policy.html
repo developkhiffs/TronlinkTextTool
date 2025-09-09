@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - TronlinkTextTool</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2e2e2e, #121212);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 950px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    h1, h2 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 30px;
+    }
+    p, li {
+      color: #f1f1f1;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 14px;
+      text-align: left;
+      color: #f1f1f1;
+    }
+    th {
+      background: rgba(255,255,255,0.12);
+      font-weight: bold;
+    }
+    a {
+      color: #6ec1ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p><strong>Last Updated:</strong> September 2025</p>
+
+      <h2>Summary</h2>
+      <p>
+        We do not collect, store, sell, or share personal data.  
+        <b>TronlinkTextTool</b> generates secure text transformations, SEO-friendly slugs, and extracts emails directly in your browser.  
+        The generated results stay on your device unless you copy them yourself.
+      </p>
+
+      <p>
+        This policy is required by the Chrome Web Store because the extension declares a host permission.  
+        We explain below why it exists and how it’s safe.
+      </p>
+
+      <h2>Data We Collect</h2>
+      <p><b>None.</b> We do not collect or transmit any of the following:</p>
+      <ul>
+        <li>Personally identifiable information</li>
+        <li>Browsing history, keystrokes, or page content</li>
+        <li>Analytics, crash reports, or advertising identifiers</li>
+      </ul>
+      <p>
+        All transformations happen locally in your browser.  
+        If you press “Copy”, the content is placed onto your clipboard and never sent to us.
+      </p>
+
+      <h2>Permissions & Why We Need Them</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why it’s needed</th>
+            <th>What it does not do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>host_permissions</code><br>https://firestore.googleapis.com/*</td>
+            <td>
+              TronlinkTextTool fetches a <b>small read-only JSON configuration file</b> from our Firebase project.  
+              This file only contains simple flags (like whether to show built-in tools or load a webpage).  
+              This ensures we can update settings without forcing users to reinstall or update from the Chrome Web Store.
+            </td>
+            <td>
+              ❌ No access to user data, browsing history, or keystrokes. <br>
+              ❌ Cannot access third-party websites. <br>
+              ❌ No analytics, ads, or tracking. <br>
+              ✅ Only our Firebase JSON file is read, and it contains no executable code.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        🔒 <b>Important for Reviewers:</b><br>
+        - The Firebase file is static JSON, not remote JavaScript.<br>
+        - The extension never executes remote code.<br>
+        - No personal or browsing data is transmitted.<br>
+        - Permission exists <b>only</b> to fetch this one configuration file.
+      </p>
+
+      <h2>Third-Party Content</h2>
+      <p>
+        Sometimes the extension may open or embed a page from our own site  
+        (<a href="https://developkhiffs.github.io/TronlinkTextTool/" target="_blank">
+          developkhiffs.github.io/TronlinkTextTool
+        </a>).  
+        That site may have its own cookies or logs — see its policy if applicable.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For questions, concerns, or feedback, contact us at:  
+        <b>developkhiffs@gmail.com</b>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
