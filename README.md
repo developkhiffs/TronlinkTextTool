@@ -13,12 +13,6 @@ It helps you instantly **format, clean, and optimize text** for SEO and content 
 - 🎨 **Glassmorphism UI** with responsive design  
 - ⚡ **Fast, simple, and no external dependencies**  
 
----
-
-## 🖼 Demo
-
-![TronlinkTextTool Screenshot](screenshot.png)  
-*(Replace with your screenshot or live site preview)*
 
 ---
 
